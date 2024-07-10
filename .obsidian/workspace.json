@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algebraic Number Theory/The Trace and the Norm.md",
+                "file": "Analytic Number Theory/Prime Number Theorem.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algebraic Number Theory/The Trace and the Norm.md",
+                "file": "Analytic Number Theory/Prime Number Theorem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algebraic Number Theory/The Trace and the Norm.md",
+                "file": "Analytic Number Theory/Prime Number Theorem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algebraic Number Theory/The Trace and the Norm.md"
+                "file": "Analytic Number Theory/Prime Number Theorem.md"
               }
             }
           }
@@ -148,7 +148,9 @@
   },
   "active": "a4dcbdfc3d7e2183",
   "lastOpenFiles": [
-    "README.md",
-    "Algebraic Number Theory/The Trace and the Norm.md"
+    "Algebraic Number Theory/The Trace and the Norm.md",
+    "Analytic Number Theory/Prime Number Theorem.md",
+    "Analytic Number Theory",
+    "README.md"
   ]
 }
