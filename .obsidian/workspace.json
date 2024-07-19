@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Analytic Number Theory/Prime Number Theorem.md",
+                "file": "Analytic Number Theory/Additive and Multiplicative Functions.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Analytic Number Theory/Prime Number Theorem.md",
+                "file": "Analytic Number Theory/Additive and Multiplicative Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Analytic Number Theory/Prime Number Theorem.md",
+                "file": "Analytic Number Theory/Additive and Multiplicative Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Analytic Number Theory/Prime Number Theorem.md"
+                "file": "Analytic Number Theory/Additive and Multiplicative Functions.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "a4dcbdfc3d7e2183",
   "lastOpenFiles": [
-    "Algebraic Number Theory/The Trace and the Norm.md",
     "Analytic Number Theory/Prime Number Theorem.md",
+    "Analytic Number Theory/Additive and Multiplicative Functions.md",
+    "Algebraic Number Theory/The Trace and the Norm.md",
     "Analytic Number Theory",
     "README.md"
   ]
