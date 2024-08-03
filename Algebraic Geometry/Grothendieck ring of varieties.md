@@ -3,3 +3,14 @@ Let us denote $K_0(Var/ \mathbb{C})$ as the Grothendieck ring of varieties over 
 $$
 X = U+Z.
 $$
+[X]=[X/V]+[V]
+[XxY] = [X] .[Y]
+
+$[\mathbb{P}^n]$
+
+1. [{\mathbb P}^n] = ? (class of projective space in Grothendieck ring of varieties)
+    
+2. [Gr(2,4)] = ? (class of Grassmannian of planes (through origin) in {\mathbb A}^4 in Grothendieck ring of varieties) – harder
+    
+$|{\mathbb {P}}^n_{{\mathbb {F}}_q}|$ = ? (number of points of projective $n$-space over a finite field with q elements)
+
