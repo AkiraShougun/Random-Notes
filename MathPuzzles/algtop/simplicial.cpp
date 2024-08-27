@@ -59,6 +59,8 @@ struct Simplicial
         int rank = lu_decomp.rank();
         std::cout << (point.size() - rank) << "\n";
     }
+
+    // Second homology group
 };
 
 int main()
