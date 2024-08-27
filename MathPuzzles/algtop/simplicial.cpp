@@ -2,53 +2,81 @@
 #include "Eigen/Dense"
 #include <optional>
 #include <map>
+#include <algorithm>
+#include <tuple>
 
 typedef std::vector<int> Point;
 typedef std::vector<std::pair<int, int>> Line;
-typedef std::optional<std::vector<std::tuple<int, int, int>>> Triangle;
-typedef std::optional<std::vector<std::tuple<int, int, int, int>>> Tetrahedron;
+typedef std::vector<std::tuple<int, int, int>> Triangle;
+typedef std::vector<std::tuple<int, int, int, int>> Tetrahedron;
 
 struct Simplicial
 {
     Point point;
     Line line;
-    Triangle triangle;
-    Tetrahedron tetrahedron;
+    std::optional<Triangle> triangle;
+    std::optional<Tetrahedron> tetrahedron;
 
-    Simplicial(Point point, Line line, Triangle triangle, Tetrahedron tetrahedron) : point(point), line(line), triangle(triangle), tetrahedron(tetrahedron) {}
+    Simplicial(Point point, Line line, std::optional<Triangle> triangle, std::optional<Tetrahedron> tetrahedron) : point(point), line(line), triangle(triangle), tetrahedron(tetrahedron)
+    {
+        std::sort(this->point.begin(), this->point.end());
+        std::sort(this->line.begin(), this->line.end());
+        if (this->triangle.has_value())
+        {
+            std::sort(this->triangle->begin(), this->triangle->end());
+        }
+        if (this->tetrahedron.has_value())
+        {
+            std::sort(this->tetrahedron->begin(), this->tetrahedron->end());
+        }
+    }
 
     Eigen::MatrixXf boundaryOne()
     {
-        std::map<int, int> pointToCol;
+        std::map<int, int> pointToRow;
         for (int i = 0; i < int(point.size()); ++i)
         {
-            pointToCol[point[i]] = i;
+            pointToRow[point[i]] = i;
         }
 
         // Matrix dimensions
-        int R = line.size();  // Number of lines
-        int C = point.size(); // Number of points
+        int R = point.size(); // Number of points
+        int C = line.size();  // Number of lines
         Eigen::MatrixXf mtx(R, C);
         mtx.setZero();
 
         // Update the matrix based on lines
-        for (int stair = 0; stair < int(line.size()); ++stair)
+        for (int stair = 0; stair < C; ++stair)
         {
             const auto &p1 = line[stair].first;
             const auto &p2 = line[stair].second;
 
-            auto it1 = pointToCol.find(p1);
-            auto it2 = pointToCol.find(p2);
+            auto it1 = pointToRow.find(p1);
+            auto it2 = pointToRow.find(p2);
 
-            if (it1 != pointToCol.end() && it2 != pointToCol.end())
+            if (it1 != pointToRow.end() && it2 != pointToRow.end())
             {
-                int col1 = it1->second;
-                int col2 = it2->second;
+                int row1 = it1->second;
+                int row2 = it2->second;
 
-                mtx(stair, col1) = -1;
-                mtx(stair, col2) = 1;
+                mtx(row1, stair) = -1;
+                mtx(row2, stair) = 1;
             }
         }
+        return mtx;
+    }
+
+    Eigen::MatrixXf BoundaryTwo()
+    {
+        int R = line.size();
+        int C;
+        if (triangle.has_value())
+        {
+            C = triangle->size();
+        }
+        Eigen::MatrixXf mtx(R, C);
+        mtx.setZero();
+
         return mtx;
     }
 
@@ -65,10 +93,10 @@ struct Simplicial
 
 int main()
 {
-    Point myPoint = {1, 2, 3};
-    Line myLine{{1, 2}, {1, 3}, {2, 3}};
-    Simplicial torus(myPoint, myLine, std::nullopt, std::nullopt);
-    torus.homologyZero();
+    Point myPoint{1, 2, 3, 4};
+    Line myLine{{1, 3}, {1, 2}, {2, 3}, {2, 4}, {3, 4}};
+    Triangle myTriangle = {{1, 2, 3}};
+    Simplicial torus(myPoint, myLine, myTriangle, std::nullopt);
     return 0;
 }
 
