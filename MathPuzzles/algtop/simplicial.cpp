@@ -131,7 +131,7 @@ struct Simplicial
         return kernel - (rank_d2);
     }
 
-    // Second homology group.
+    // Second homology group...
 };
 
 int main()
