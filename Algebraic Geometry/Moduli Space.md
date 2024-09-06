@@ -6,9 +6,9 @@ Grothendieck class of $\overline{M_{0,n}}$
 
 $[\overline{M_{0,3}}] = 1$
 $[\overline{M_{0,4}}] = \mathbb{L}+1$
-$[\overline{M_{0,5}}] = \mathbb{L}^2+5\mathbb{L}+1$
-$[\overline{M_{0,6}}] = \mathbb{L}^3+16\mathbb{L}^2+16\mathbb{L}+1$
-$[\overline{M_{0,7}}] = \mathbb{L}^4+42\mathbb{L}^3+127\mathbb{L}^2+42\mathbb{L}+1$
+$[\overline{M_{0,5}}] = \mathbb{L}^2+5\mathbb{L}+1$ = L^2 +2L + (3L+1)
+$[\overline{M_{0,6}}] = \mathbb{L}^3+16\mathbb{L}^2+16\mathbb{L}+1$ = L^3+6L^2+6L+1 + (10L^2+10L)
+$[\overline{M_{0,7}}] = \mathbb{L}^4+42\mathbb{L}^3+127\mathbb{L}^2+42\mathbb{L}+1$ = L^4+17L^3+32L^2+17L+1 + (25L^3+95L^2+10L)
 $[\overline{M_{0,8}}] = \mathbb{L}^5+99\mathbb{L}^4+715\mathbb{L}^3+715\mathbb{L}^2+99\mathbb{L}+1$
 
 ```python
