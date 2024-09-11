@@ -11,7 +11,7 @@ bool palindrome(int n)
         digit = temp % 10;
         rev = (rev * 10) + digit;
         temp = temp / 10;
-        // std::cout << temp << "\n"...;
+        // std::cout << temp << "\n"......;
     }
     return (rev == n);
 }
