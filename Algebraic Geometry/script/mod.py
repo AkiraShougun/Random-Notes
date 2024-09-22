@@ -24,10 +24,9 @@ def circular_primes(n):
 def prime(n):
     return [i for i in range(1, n) if is_prime(i)]
 
-n = 100000
+n = 10000
 
 circular = circular_primes(n)
 prime = prime(n)
 
-print(circular)
-# [2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97, 113, 131, 197, 199, 311, 337, 373, 719, 733, 919, 971, 991, 1193, 1931, 3119, 3779, 7793, 7937, 9311, 9377, 11939, 19391, 19937, 37199, 39119, 71993, 91193, 93719, 93911, 99371]
+print(len(circular) - len(prime))  # AAAAAAA
