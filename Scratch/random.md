@@ -5,3 +5,5 @@ $$
 $$\overline{M_{0,n}}$$
 
 Write more progress regarding this ^
+
+$\sum_{p\le x} \tau(p-1)$
